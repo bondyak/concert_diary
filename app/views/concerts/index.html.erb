@@ -21,7 +21,7 @@
         <td><%= concert.date %></td>
         <td><%= concert.notes %></td>
         <td><%= concert.artist.name %></td>
-        <td><%= concert.venue_id %></td>
+        <td><%= concert.venue.name %></td>
         <td>
           <a href="/concerts/<%= concert.id %>" class="btn btn-primary">Show</a>
           <a href="/concerts/<%= concert.id %>/edit" class="btn btn-warning">Edit</a>
