@@ -1,6 +1,8 @@
 class Concert < ApplicationRecord
   # Direct associations
 
+  belongs_to :artist
+
   # Indirect associations
 
   # Validations
