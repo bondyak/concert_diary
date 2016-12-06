@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @concert = Concert.new
     @artist = Artist.find(params[:id])
 
     render("artists/show.html.erb")
