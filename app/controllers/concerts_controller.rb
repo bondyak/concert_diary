@@ -1,6 +1,6 @@
 class ConcertsController < ApplicationController
   def index
-    @concerts = Concert.all
+    @concerts = Concert.page(params[:page]).per(10)
 
     render("concerts/index.html.erb")
   end
