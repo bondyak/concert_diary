@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "artists#index"
+  root :to => "concerts#index"
   # Routes for the Concert resource:
   # CREATE
   get "/concerts/new", :controller => "concerts", :action => "new"

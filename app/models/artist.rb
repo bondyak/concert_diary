@@ -7,5 +7,6 @@ class Artist < ApplicationRecord
   # Indirect associations
 
   # Validations
+  validates :name, :presence => true
 
 end

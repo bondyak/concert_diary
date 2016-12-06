@@ -8,5 +8,6 @@ class Concert < ApplicationRecord
   # Indirect associations
 
   # Validations
-
+  validates :date, :presence => true
+  
 end
