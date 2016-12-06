@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Concert resource:
+  # CREATE
+  get "/concerts/new", :controller => "concerts", :action => "new"
+  post "/create_concert", :controller => "concerts", :action => "create"
+
+  # READ
+  get "/concerts", :controller => "concerts", :action => "index"
+  get "/concerts/:id", :controller => "concerts", :action => "show"
+
+  # UPDATE
+  get "/concerts/:id/edit", :controller => "concerts", :action => "edit"
+  post "/update_concert/:id", :controller => "concerts", :action => "update"
+
+  # DELETE
+  get "/delete_concert/:id", :controller => "concerts", :action => "destroy"
+  #------------------------------
+
   # Routes for the Venue resource:
   # CREATE
   get "/venues/new", :controller => "venues", :action => "new"

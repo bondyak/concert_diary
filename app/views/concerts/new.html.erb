@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @concert.errors.any? %>
+  <% @concert.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Concert</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_concert" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @concert.date %>">
+      </div>
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <input type="text" id="notes" name="notes" placeholder="Notes" class="form-control" value="<%= @concert.notes %>">
+      </div>
+
+      <!-- Label and input for artist_id -->
+      <div class="form-group">
+        <label for="artist_id" class="control-label">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id" name="artist_id" placeholder="Artist" class="form-control" value="<%= @concert.artist_id %>">
+      </div>
+
+      <!-- Label and input for venue_id -->
+      <div class="form-group">
+        <label for="venue_id" class="control-label">
+          Venue
+        </label>
+
+        <input type="text" id="venue_id" name="venue_id" placeholder="Venue" class="form-control" value="<%= @concert.venue_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Concert
+      </button>
+      or
+      <a href="/concerts">Cancel</a>
+    </form>
+  </div>
+</div>
