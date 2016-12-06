@@ -20,8 +20,20 @@
       <tr>
         <td><%= concert.date %></td>
         <td><%= concert.notes %></td>
-        <td><%= concert.artist.name %></td>
-        <td><%= concert.venue.name %></td>
+        <td>
+          <% if concert.artist.present? %>
+            <a href="/artists/<%= concert.artist.id %>">
+              <%= concert.artist.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if concert.venue.present? %>
+            <a href="/venues/<%= concert.venue.id %>">
+              <%= concert.venue.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/concerts/<%= concert.id %>" class="btn btn-primary">Show</a>
           <a href="/concerts/<%= concert.id %>/edit" class="btn btn-warning">Edit</a>

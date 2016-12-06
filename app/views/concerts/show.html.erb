@@ -12,10 +12,22 @@
       <dd><%= @concert.notes %></dd>
 
       <dt>Artist</dt>
-      <dd><%= @concert.artist_id %></dd>
+      <dd>
+        <% if @concert.artist.present? %>
+          <a href="/artists/<%= @concert.artist_id %>">
+            <%= @concert.artist.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Venue</dt>
-      <dd><%= @concert.venue_id %></dd>
+      <dd>
+        <% if @concert.venue.present? %>
+          <a href="/venues/<%= @concert.venue_id %>">
+            <%= @concert.venue.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
