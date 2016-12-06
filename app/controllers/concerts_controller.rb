@@ -1,6 +1,7 @@
 class ConcertsController < ApplicationController
   def index
-    @concerts = Concert.page(params[:page]).per(10)
+    @q = Concert.ransack(params[:q])
+    @concerts = @q.result(:distinct => true).includes(:artist, :venue).page(params[:page]).per(10)
 
     render("concerts/index.html.erb")
   end
